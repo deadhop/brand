@@ -1,6 +1,6 @@
 # deadhop brand
 
-**Nothing to reach. Nothing to spend.**
+**Dials out. Never listens.**
 
 deadhop is "dead drop" plus "hop". Customer and merchant never meet: payments are
 left in a drop, and every message travels relay to relay. "Dead" is also literal,
