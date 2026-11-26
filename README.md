@@ -1,20 +1,42 @@
-# deadhop brand
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="logo/lockup-dark.svg">
+  <img alt="deadhop" src="logo/lockup.svg" width="320">
+</picture>
 
 **Dials out. Never listens.**
 
-deadhop is "dead drop" plus "hop". Customer and merchant never meet: payments are
-left in a drop, and every message travels relay to relay. "Dead" is also literal,
-since the service has no listening socket. The identity combines two ideas, the
-**hop** (a dashed arc) and the **drop** (a box with a slot). It has two faces:
+[![License](https://img.shields.io/github/license/deadhop/brand?style=for-the-badge)](LICENSE)
+[![Fonts](https://img.shields.io/badge/fonts-SIL%20OFL-5fc6b9?style=for-the-badge)](fonts/)
+
+</div>
+
+The logo, icons, fonts, colours and design rules of [deadhop](https://deadhop.run), and the
+tools that rebuild them.
+
+deadhop is "dead drop" plus "hop". Customer and merchant never meet: payments are left in a
+drop, and every message travels relay to relay. "Dead" is also literal, since the service has no
+listening socket. The identity combines the two ideas: the **hop** (a dashed arc) and the
+**drop** (a box with a slot). It has two faces:
 
 | Face | Used for | Feel |
 | --- | --- | --- |
 | **Checkout** | pay buttons, invoices, anything a customer sees on a merchant's site | Quiet. Geist sentences, one teal accent, plain words |
 | **Developer** | CLI, README, docs, dashboard, npm | Stamped. Martian Mono labels, drop IDs, yellow tags, dark ground |
 
+<p align="center">
+  <img alt="Checkout face: an invoice for 60,000 sats with a short note, a QR code, the address and Copy address" src="https://deadhop.run/shots/payments-checkout.webp" width="34%">
+  <img alt="Developer face: the operator's invoice list, with stamped drop numbers and status labels" src="https://deadhop.run/shots/payments-invoices.webp" width="62%">
+</p>
+<p align="center"><sub>Checkout (left) and developer (right), from the dashboard on a test chain.</sub></p>
+
 ## Logo
 
-![deadhop lockup](logo/lockup.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="logo/mark-fog.svg">
+  <img alt="The deadhop mark: a dot, a dashed arc, and a box with a slot" src="logo/mark.svg" width="96">
+</picture>
 
 The mark is a dot (you), a dashed hop, and a slotted drop box. It is one colour,
 drawn on a 32-unit grid, and holds at 16 px.
@@ -101,6 +123,15 @@ All three reproduce the committed files byte for byte.
 **If anything here changes,** update the copies in the other deadhop repositories. They hold
 copies rather than a submodule, so each one builds from its own clone:
 
+```mermaid
+flowchart LR
+    B["deadhop/brand"]
+    B -- "mark, favicon, fonts<br/>compiled into the status pages" --> R["deadhop/relay<br/>assets/brand/"]
+    B -- "mark, favicon, fonts<br/>compiled into the admin pages" --> L["deadhop/lnaddr<br/>assets/brand/"]
+    B -- "fonts, favicon" --> J["deadhop/js<br/>brand/"]
+    B -- "fonts, icons, mark, social card" --> S["deadhop/site<br/>brand/, public/, docs/public/"]
+```
+
 - [deadhop/relay](https://github.com/deadhop/relay) and [deadhop/lnaddr](https://github.com/deadhop/lnaddr):
   `assets/brand/` (the mark, favicon and fonts their status pages compile in).
 - [deadhop/js](https://github.com/deadhop/js): `brand/` (fonts and icons for the dashboard and console).
@@ -111,4 +142,9 @@ copies rather than a submodule, so each one builds from its own clone:
 - The mark is inlined as SVG in deadhop/js `dashboard/src/components/App.svelte` (header) and
   deadhop/site `src/pages/index.astro` (header). Nothing checks these, so update them by hand.
 
-From the deadhop workspace, `just brand-check` compares every copy with this repository.
+The deadhop maintainers check every copy against this repository.
+
+## License
+
+The logo, icons, colours and tools: [MIT](LICENSE). The fonts in `fonts/` are under the SIL Open
+Font License (the `OFL-*.txt` file next to each).
