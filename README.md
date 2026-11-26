@@ -98,10 +98,17 @@ only need `font-src 'self'`.
 
 All three reproduce the committed files byte for byte.
 
-**If the mark changes,** update the copies outside `brand/` too:
+**If anything here changes,** update the copies in the other deadhop repositories. They hold
+copies rather than a submodule, so each one builds from its own clone:
 
-- `site/public/{favicon.svg,og.png,apple-touch-icon.png}` and
-  `site/docs/public/{favicon.svg,mark.svg,mark-fog.svg}` are copies. `site/scripts/check.mjs`
-  fails the site build if any of them differ from `brand/`.
-- The mark is inlined as SVG in `dashboard/src/components/App.svelte` (header) and
-  `site/src/pages/index.astro` (header). Nothing checks these, so update them by hand.
+- [deadhop/relay](https://github.com/deadhop/relay) and [deadhop/lnaddr](https://github.com/deadhop/lnaddr):
+  `assets/brand/` (the mark, favicon and fonts their status pages compile in).
+- [deadhop/js](https://github.com/deadhop/js): `brand/` (fonts and icons for the dashboard and console).
+- [deadhop/site](https://github.com/deadhop/site): `brand/` (fonts), plus
+  `public/{favicon.svg,og.png,apple-touch-icon.png}` and
+  `docs/public/{favicon.svg,mark.svg,mark-fog.svg}`. Its `scripts/check.mjs` fails the site build if
+  any of them differ from its `brand/` copy.
+- The mark is inlined as SVG in deadhop/js `dashboard/src/components/App.svelte` (header) and
+  deadhop/site `src/pages/index.astro` (header). Nothing checks these, so update them by hand.
+
+From the deadhop workspace, `just brand-check` compares every copy with this repository.

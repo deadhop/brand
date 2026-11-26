@@ -34,4 +34,4 @@ PY
   --force-device-scale-factor=1 --virtual-time-budget=2000 --window-size=1200,630 \
   --screenshot="$brand/og.png" "file://$brand/tools/og.html" 2>/dev/null
 echo "rendered icons and og.png in $brand"
-echo "copy changed files into site/public and site/docs/public (site/scripts/check.mjs verifies them)"
+echo "copy changed files into deadhop/site public/ and docs/public/ (its scripts/check.mjs verifies them)"
