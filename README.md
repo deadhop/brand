@@ -144,6 +144,22 @@ flowchart LR
 
 The deadhop maintainers check every copy against this repository.
 
+## Agent skills
+
+This repository ships [agent skills](https://deadhop.run/docs/skills.html) for Claude Code,
+Codex, Cursor and other agents that read `SKILL.md`:
+
+```sh
+npx skills add deadhop/brand
+```
+
+| Skill | Use it to |
+| --- | --- |
+| `deadhop-brand` | apply the deadhop colours, type, logo and design rules to a UI, docs, slides or images, and change a brand file in the right order |
+
+Install one with `--skill <name>`. Every deadhop skill is listed on
+[Agent skills](https://deadhop.run/docs/skills.html).
+
 ## License
 
 The logo, icons, colours and tools: [MIT](LICENSE). The fonts in `fonts/` are under the SIL Open
